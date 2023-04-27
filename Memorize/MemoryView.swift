@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    let transports: Array<String> = ["🚗","🚀","🚤","🚂","✈️","🚁","🛸","🛥"]
-    let flags: Array<String> = ["🇧🇷","🇮🇹","🇩🇪","🇺🇸","🇩🇰","🇯🇵","🇲🇾","🇸🇬","🇧🇳","🇱🇧"]
-    let animals: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
+struct MemoryView: View {
+//    let transports: Array<String> = ["🚗","🚀","🚤","🚂","✈️","🚁","🛸","🛥"]
+//    let flags: Array<String> = ["🇧🇷","🇮🇹","🇩🇪","🇺🇸","🇩🇰","🇯🇵","🇲🇾","🇸🇬","🇧🇳","🇱🇧"]
+//    let animals: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
     
     @State var emojiSet: Array<String> = [];
     
@@ -32,7 +32,7 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {self.emojiSet = self.transports.shuffled()}, label: {
                     VStack{
-                        Image(systemName: "car.fill")
+                        Image(systemName: "car.fill yu")
                         Text("Transports")
                             .font(.footnote)
                     }
