@@ -14,17 +14,19 @@
 		5FCFC3CD29FAA41A00D49643 /* MemoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */; };
 		5FCFC3CF29FAA6DE00D49643 /* MemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */; };
 		5FCFC3D129FC467400D49643 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3D029FC467400D49643 /* Enums.swift */; };
+		5FCFC3D329FC67EA00D49643 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3D229FC67EA00D49643 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F67534529F5371100A05F04 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F67534829F5371100A05F04 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		5F67534A29F5371100A05F04 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		5F67534A29F5371100A05F04 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		5F67534C29F5371300A05F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F67534F29F5371300A05F04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryModel.swift; sourceTree = "<group>"; };
 		5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryController.swift; sourceTree = "<group>"; };
 		5FCFC3D029FC467400D49643 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5FCFC3D229FC67EA00D49643 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */,
 				5FCFC3D029FC467400D49643 /* Enums.swift */,
 				5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */,
+				5FCFC3D229FC67EA00D49643 /* Theme.swift */,
 				5F67534C29F5371300A05F04 /* Assets.xcassets */,
 				5F67534E29F5371300A05F04 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 				5F67534B29F5371100A05F04 /* MemoryView.swift in Sources */,
 				5FCFC3D129FC467400D49643 /* Enums.swift in Sources */,
 				5FCFC3CF29FAA6DE00D49643 /* MemoryController.swift in Sources */,
+				5FCFC3D329FC67EA00D49643 /* Theme.swift in Sources */,
 				5F67534929F5371100A05F04 /* MemorizeApp.swift in Sources */,
 				5FCFC3CD29FAA41A00D49643 /* MemoryModel.swift in Sources */,
 			);

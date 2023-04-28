@@ -1,6 +1,6 @@
 import Foundation
 
-enum Theme: (String), CaseIterable, Identifiable{
+enum ThemesSupported: (String), CaseIterable, Identifiable{
     case countryFlags = "Flags"
     case transports = "Transports"
     case animals = "Animals"

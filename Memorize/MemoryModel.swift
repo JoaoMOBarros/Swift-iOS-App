@@ -11,6 +11,7 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
     private(set) var cards: Array<Card>
     
     var indexOfFacedUpCard: Int? = nil
+    var score: Int = 0
     
     mutating func choose(_ card: Card){
         if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}),
@@ -21,6 +22,10 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
                 if cards[potentialMatch].content == cards[chosenIndex].content{
                     cards[potentialMatch].isMatched = true
                     cards[chosenIndex].isMatched = true
+                    score += 2
+                }
+                else{
+                    score -= 1
                 }
                 indexOfFacedUpCard = nil
             }
@@ -41,6 +46,7 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
             cards.append(Card(id: pairIndex*2, content: content))
             cards.append(Card(id: pairIndex*2+1, content: content))
         }
+        cards.shuffle()
     }
     
     struct Card: Identifiable{
@@ -50,10 +56,4 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
         var content: CardContent
     }
     
-    struct ThemeInfo{
-        var name: String
-        var set: Array<String>
-        var pairs: Int
-        var color: String
-    }
 }

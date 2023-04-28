@@ -11,33 +11,51 @@ struct MemoryView: View {
     
    @ObservedObject var controller: MemoryController
     
-    @State var emojiSet: Array<String> = []
-    @State var selectedTheme: Theme = Theme.transports
+    @State var selectedTheme: String = "Transports"
     
     var body: some View {
         VStack{
             Text("Memorize!")
                 .font(.title)
             Spacer()
+            HStack{
+                Spacer()
+                Text(controller.getName())
+                    .font(.subheadline)
+                Spacer()
+                Text("Score: \(controller.getScore())")
+                    .font(.subheadline)
+                Spacer()
+
+            }
+            Spacer()
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]){
                     ForEach(controller.cards){ card in
-                        CardView(card: card).aspectRatio(2/3, contentMode: .fit).onTapGesture {
+                        CardView(card: card, color: controller.themeColor).aspectRatio(2/3, contentMode: .fit).onTapGesture {
                             controller.choose(card)
                         }
                     }
                 }
-            }.foregroundColor(.red)
+            }.foregroundColor(controller.themeColor)
             Spacer()
             VStack{
                 List{
                     Picker("Theme", selection: $selectedTheme){
-                        ForEach(Theme.allCases){ theme in
-                            Text(theme.rawValue).tag(theme)
+                        ForEach(ThemesSupported.allCases){ theme in
+                            Text(theme.rawValue).tag(theme.rawValue)
                         }
                     }
+                }.cornerRadius(25)
+                .padding()
+                .frame(height: 145.0)
+                HStack{
+                    Spacer()
+                    Button("Select Theme"){controller.changeTheme(theme: selectedTheme)}
+                    Spacer()
+                    Button("New Game"){controller.newGame()}
+                    Spacer()
                 }
-                Button("Select Theme"){controller.changeTheme(theme: selectedTheme)}
             }
         }.padding(.horizontal)
     }
@@ -45,6 +63,7 @@ struct MemoryView: View {
 
 struct CardView: View {
     let card: MemoryModel<String>.Card
+    let color: Color
     
     var body: some View{
         ZStack{
@@ -58,7 +77,7 @@ struct CardView: View {
                 shape.opacity(0.2)
             }
             else{
-                shape.fill(.red)
+                shape.fill(color)
             }
         }
     }
