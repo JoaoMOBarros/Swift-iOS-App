@@ -13,7 +13,6 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
     var indexOfFacedUpCard: Int? = nil
     
     mutating func choose(_ card: Card){
-        
         if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}),
             !cards[chosenIndex].isFaceUp,
             !cards[chosenIndex].isMatched
@@ -51,7 +50,7 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
         var content: CardContent
     }
     
-    struct Theme{
+    struct ThemeInfo{
         var name: String
         var set: Array<String>
         var pairs: Int

@@ -13,7 +13,7 @@
 		5F67535029F5371300A05F04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F67534F29F5371300A05F04 /* Preview Assets.xcassets */; };
 		5FCFC3CD29FAA41A00D49643 /* MemoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */; };
 		5FCFC3CF29FAA6DE00D49643 /* MemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */; };
-		5FCFC3D129FC467400D49643 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3D029FC467400D49643 /* enums.swift */; };
+		5FCFC3D129FC467400D49643 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCFC3D029FC467400D49643 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		5F67534F29F5371300A05F04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryModel.swift; sourceTree = "<group>"; };
 		5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryController.swift; sourceTree = "<group>"; };
-		5FCFC3D029FC467400D49643 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		5FCFC3D029FC467400D49643 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 				5F67534829F5371100A05F04 /* MemorizeApp.swift */,
 				5F67534A29F5371100A05F04 /* MemoryView.swift */,
 				5FCFC3CE29FAA6DE00D49643 /* MemoryController.swift */,
-				5FCFC3D029FC467400D49643 /* enums.swift */,
+				5FCFC3D029FC467400D49643 /* Enums.swift */,
 				5FCFC3CC29FAA41A00D49643 /* MemoryModel.swift */,
 				5F67534C29F5371300A05F04 /* Assets.xcassets */,
 				5F67534E29F5371300A05F04 /* Preview Content */,
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F67534B29F5371100A05F04 /* MemoryView.swift in Sources */,
-				5FCFC3D129FC467400D49643 /* enums.swift in Sources */,
+				5FCFC3D129FC467400D49643 /* Enums.swift in Sources */,
 				5FCFC3CF29FAA6DE00D49643 /* MemoryController.swift in Sources */,
 				5F67534929F5371100A05F04 /* MemorizeApp.swift in Sources */,
 				5FCFC3CD29FAA41A00D49643 /* MemoryModel.swift in Sources */,

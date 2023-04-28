@@ -9,7 +9,7 @@ import SwiftUI
 
 class MemoryController: ObservableObject {
     
-    static let emojis: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
+    static var emojis: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
     
     static func createMemoryGame() -> MemoryModel<String>{
         MemoryModel<String>(numberOfPairsOfCards:4){ pairIndex in
@@ -25,5 +25,23 @@ class MemoryController: ObservableObject {
     
     func choose(_ card: MemoryModel<String>.Card){
         model.choose(card)
+    }
+    
+    func changeTheme(theme: Theme){
+        
+        var newEmojis: Array<String> {
+            switch theme{
+            case Theme.transports:
+                return ["🚗","🚀","🚤","🚂","✈️","🚁","🛸","🛥"]
+            case Theme.animals:
+                return ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
+            case Theme.countryFlags:
+                return ["🇧🇷","🇮🇹","🇩🇪","🇺🇸","🇩🇰","🇯🇵","🇲🇾","🇸🇬","🇧🇳","🇱🇧"]
+            }
+        }
+        
+        model = MemoryModel<String>(numberOfPairsOfCards:4){ pairIndex in
+            newEmojis[pairIndex]
+        }
     }
 }

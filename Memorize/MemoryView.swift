@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct MemoryView: View {
-//    let transports: Array<String> = ["🚗","🚀","🚤","🚂","✈️","🚁","🛸","🛥"]
-//    let flags: Array<String> = ["🇧🇷","🇮🇹","🇩🇪","🇺🇸","🇩🇰","🇯🇵","🇲🇾","🇸🇬","🇧🇳","🇱🇧"]
-//    let animals: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
     
    @ObservedObject var controller: MemoryController
     
     @State var emojiSet: Array<String> = []
-    @State var selectedTheme: String = ""
+    @State var selectedTheme: Theme = Theme.transports
     
     var body: some View {
         VStack{
@@ -32,14 +29,15 @@ struct MemoryView: View {
                 }
             }.foregroundColor(.red)
             Spacer()
-            HStack{
+            VStack{
                 List{
                     Picker("Theme", selection: $selectedTheme){
                         ForEach(Theme.allCases){ theme in
-                            Text(theme.rawValue).tag(theme.rawValue.lowercased())
+                            Text(theme.rawValue).tag(theme)
                         }
                     }
                 }
+                Button("Select Theme"){controller.changeTheme(theme: selectedTheme)}
             }
         }.padding(.horizontal)
     }
@@ -55,6 +53,9 @@ struct CardView: View {
                 shape.fill(.white)
                 shape.strokeBorder(lineWidth: 3)
                 Text(card.content).font(.largeTitle)
+            }
+            else if card.isMatched{
+                shape.opacity(0.2)
             }
             else{
                 shape.fill(.red)
