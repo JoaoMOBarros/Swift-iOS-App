@@ -7,22 +7,32 @@
 
 import Foundation
 
-struct MemoryModel<CardContent>{
+struct MemoryModel<CardContent> where CardContent: Equatable{
     private(set) var cards: Array<Card>
     
-    mutating func choose(_ card: Card){
-        let index = index(of: card)
-        cards[index].isFaceUp.toggle()
-    }
+    var indexOfFacedUpCard: Int? = nil
     
-    func index(of card: Card) -> Int{
-        for index in 0..<cards.count {
-            if cards[index].id == card.id {
-                return index
-            }
-        }
+    mutating func choose(_ card: Card){
         
-        return 0 // #TODO: (joaomarco@) need to handle this better
+        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}),
+            !cards[chosenIndex].isFaceUp,
+            !cards[chosenIndex].isMatched
+        {
+            if let potentialMatch = indexOfFacedUpCard {
+                if cards[potentialMatch].content == cards[chosenIndex].content{
+                    cards[potentialMatch].isMatched = true
+                    cards[chosenIndex].isMatched = true
+                }
+                indexOfFacedUpCard = nil
+            }
+            else{
+                for index in cards.indices{
+                    cards[index].isFaceUp = false
+                }
+                indexOfFacedUpCard = chosenIndex
+            }
+            cards[chosenIndex].isFaceUp.toggle()
+        }
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent){
@@ -36,8 +46,15 @@ struct MemoryModel<CardContent>{
     
     struct Card: Identifiable{
         var id: Int
-        var isFaceUp: Bool = true
+        var isFaceUp: Bool = false
         var isMatched: Bool = false
         var content: CardContent
+    }
+    
+    struct Theme{
+        var name: String
+        var set: Array<String>
+        var pairs: Int
+        var color: String
     }
 }

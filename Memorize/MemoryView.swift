@@ -14,7 +14,8 @@ struct MemoryView: View {
     
    @ObservedObject var controller: MemoryController
     
-    @State var emojiSet: Array<String> = [];
+    @State var emojiSet: Array<String> = []
+    @State var selectedTheme: String = ""
     
     var body: some View {
         VStack{
@@ -30,6 +31,16 @@ struct MemoryView: View {
                     }
                 }
             }.foregroundColor(.red)
+            Spacer()
+            HStack{
+                List{
+                    Picker("Theme", selection: $selectedTheme){
+                        ForEach(Theme.allCases){ theme in
+                            Text(theme.rawValue).tag(theme.rawValue.lowercased())
+                        }
+                    }
+                }
+            }
         }.padding(.horizontal)
     }
 }
@@ -51,8 +62,6 @@ struct CardView: View {
         }
     }
 }
-
-
 
 
 
