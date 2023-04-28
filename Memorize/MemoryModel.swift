@@ -37,6 +37,8 @@ struct MemoryModel<CardContent> where CardContent: Equatable{
             }
             cards[chosenIndex].isFaceUp.toggle()
         }
+        
+        return 0 // #TODO: (joaomarco@) need to handle this better
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent){
