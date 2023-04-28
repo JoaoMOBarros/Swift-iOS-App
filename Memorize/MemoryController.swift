@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class MemoryController {
+class MemoryController: ObservableObject {
     
     static let emojis: Array<String> = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🦁","🦄"]
     
@@ -17,9 +17,13 @@ class MemoryController {
         }
     }
     
-    private var model: MemoryModel<String> = createMemoryGame()
+    @Published private var model: MemoryModel<String> = createMemoryGame()
     
     var cards: Array<MemoryModel<String>.Card>{
         return model.cards
+    }
+    
+    func choose(_ card: MemoryModel<String>.Card){
+        model.choose(card)
     }
 }
